@@ -1,36 +1,15 @@
-# Bootcamp de Data Analytics - Turma 6
+# Bootcamp de Data Analytics - Turma 6 e Bootcamp Back-End Python e Django - Turma 2
 
 
 <img width="371" alt="Screenshot 2024-05-12 at 15 57 52" src="https://github.com/NaraGuimma/Turma6-Bootcamp-Data-Analytics/assets/60903424/dcb4172f-e3fd-409f-abf8-44da0edcfee3"  align="center"><br>
 
 
 
-Este repositório contém os exercícios e suas resoluções do Bootcamp de Data Analytics - Turma 6, abrangendo conceitos fundamentais e práticos nas áreas de estatística, probabilidade, teste de hipótese, regressão e correlação. Além disso, são utilizadas ferramentas como Google Sheets e PowerBI para análise e visualização de dados.
+Este repositório contém os exercícios e suas resoluções do Bootcamp de Data Analytics - Turma 6 e Bootcamp Back-End Python e Django - Turma 2, abrangendo conceitos fundamentais e práticos nas áreas de estatística, probabilidade, teste de hipótese, regressão e correlação, back end python, API's, e python framework Django.
 
 ## Estrutura do Repositório
 
-O repositório está organizado da seguinte forma:
-
-- `exercicios/`: Contém os exercícios propostos durante o bootcamp.
-- `resolucoes/`: Aqui estão as resoluções dos exercícios.
-
-## Tópicos Abordados
-
-### Base Teórica
-
-- Estatística descritiva e inferencial.
-- Conceitos de probabilidade.
-- Testes de hipóteses e intervalos de confiança.
-
-### Análise de Dados (Em progresso)
-
-- Regressão linear e múltipla.
-- Correlação entre variáveis.
-
-### Ferramentas Utilizadas (backlog)
-
-- Google Sheets: Para manipulação e análise preliminar de dados.
-- PowerBI: Para criação de dashboards interativos e visualizações avançadas.
+- Contém pastas com arquivos em `.ipynb` e `.py`, trazendo soluções para os mais diversos exercícios disponibilidados ao longo dos bootcamp.
 
 ## Como Utilizar
 
