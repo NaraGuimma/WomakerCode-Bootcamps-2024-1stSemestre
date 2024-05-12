@@ -1,5 +1,10 @@
 # Bootcamp de Data Analytics - Turma 6
 
+
+<img width="371" alt="Screenshot 2024-05-12 at 15 57 52" src="https://github.com/NaraGuimma/Turma6-Bootcamp-Data-Analytics/assets/60903424/dcb4172f-e3fd-409f-abf8-44da0edcfee3"  align="center"><br>
+
+
+
 Este repositório contém os exercícios e suas resoluções do Bootcamp de Data Analytics - Turma 6, abrangendo conceitos fundamentais e práticos nas áreas de estatística, probabilidade, teste de hipótese, regressão e correlação. Além disso, são utilizadas ferramentas como Google Sheets e PowerBI para análise e visualização de dados.
 
 ## Estrutura do Repositório
