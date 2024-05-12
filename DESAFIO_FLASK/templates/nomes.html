@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estatistica Nomes</title>
+  </head>
+  <body>
+    <h1>Estatistica Nomes</h1>
+    <ul>
+      {% for dado in dados %}
+      <li>
+        <p>Localidade: {{ dado['localidade'] }}</p>
+        <p>Nome: {{ dado['nome'] }}</p>
+        <p>Sexo: {{ dado['sexo'] }}</p>
+      </li>
+      <table border="1">
+        <tr>
+          <th>Frequencia</th>
+          <th>Periodo</th>
+        </tr>
+        {% for valor in dado['res'] %}
+        <tr>
+          <td>{{ valor['frequencia'] }}</td>
+          <td>{{ valor['periodo'] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

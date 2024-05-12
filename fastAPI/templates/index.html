@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MINHA LISTA DE TAREFAS</title>
+  </head>
+  <link rel="stylesheet" href="../static/styles.css" />
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <h1 class="navbar-brand">MINHA LISTA DE TAREFAS</h1>
+      </div>
+    </nav>
+    <br />
+    <table>
+      <tr>
+        <th>Dia da semana</th>
+        <th>Tarefas</th>
+        <th>Operacao</th>
+      </tr>
+      {% for id in tododict %}
+      <tr>
+        <td>{{tododict[id]['dia']}}</td>
+        <td>{{tododict[id]['tarefa']}}</td>
+        <td>
+          <a href="/delete/{{id}}">
+            <button class="btn btn-danger">Excluir</button>
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <form method="post" action="/add">
+          <td><input type="text" name="dia" required /></td>
+          <td><input type="text" name="tarefa" required /></td>
+          <td style="text-align: center">
+            <button type="submit" class="btn btn-primary">
+              Adicionar item
+            </button>
+          </td>
+        </form>
+      </tr>
+    </table>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"
+  ></script>
+</html>

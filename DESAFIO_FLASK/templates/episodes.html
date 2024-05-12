@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Episodes</title>
+  </head>
+  <body>
+    <h1>Episodes</h1>
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Air Date</th>
+        <th>Episode Code</th>
+      </tr>
+      {% for episode in episodes %}
+      <tr>
+        <td>
+          <a href="{{ url_for('episode_profile', episode_id=episode['id']) }}"
+            >{{ episode['name'] }}</a
+          >
+        </td>
+        <td>{{ episode['air_date'] }}</td>
+        <td>{{ episode['episode'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

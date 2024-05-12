@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <meta charset="UTF-8" />
+    <title>Validar Formulario</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius:10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup {
+            display:none;
+            position:fixed;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            padding:20px;
+            border-radius: 5px;
+            font-size: 10px;
+            z-index: 1000;
+        }
+
+        .success {
+            background-color: #4caf50;
+            color: #000;
+        }
+
+        .error {
+            background-color: #f44336;
+            color: #000;
+        }        
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius:5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover{
+            background-color: #0056b3;
+        }
+
+    </style>    
+    <body>
+        <div class="container">
+            <h1>Validar Formulario</h1>
+            <div class="form-container">
+                <form action="/submit" method="post">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Nome" /> </br> </br>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Email" /> </br> </br>                    
+
+                    <label for="endereco">Endereco</label>
+                    <textarea id="endereco" name="endereco" required></textarea> </br> </br>                    
+
+                    <label for="dob">Ano de nascimento</label>
+                    <input type="date" id="dob" name="dob" required  /> </br> </br>                    
+
+                    <label for="genero">Genero</label>
+                    <input type="radio" id="masculino" name="genero" value="masculino"  /> 
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" id="feminino" name="genero" value="feminino"  /> 
+                    <label for="feminino">Feminino</label>
+                    <input type="radio" id="outro" name="genero" value="outro"  /> 
+                    <label for="outro">Outro</label>
+                    <input type="radio" id="nulo" name="genero" value="nulo"  /> 
+                    <label for="nulo">Prefiro nao responder</label> </br> </br>  
+
+
+                    <label for="pais">Pais</label>
+                    <input type="text" id="pais" name="pais" required /> </br> </br>
+                    <div class="g-recaptcha" data-sitekey={{site_key}}></div>
+                    </br>
+                    <button type="submit">Enviar</button>
+                </form>
+
+            </div>
+        </div>
+        <div id="popup" class="popup">
+            <span id="popupMensagem"></span>
+
+        </div>
+        <script>
+            var mensagem = "{{mensagem}}"
+            var status = "{{status}}"
+
+            function displayPopup(){
+                var popup = document.getElementById("popup")
+                var popupMensagem = document.getElementById("popupMensagem")
+
+                popupMensagem.textContent = mensagem
+                popupMensagem.className = "popup " + status
+                popupMensagem.style.display = "block"
+
+                setTimeout(function(){
+                    popup.style.display = "none";
+                }, 3000);
+            }
+
+            window.onload = function (){
+                if (mensagem !== ""){
+                    displayPopup();
+                }
+            }
+
+        </script>
+    </body>
+</html>

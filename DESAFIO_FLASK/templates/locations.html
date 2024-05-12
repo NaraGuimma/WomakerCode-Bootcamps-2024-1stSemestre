@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locations</title>
+  </head>
+  <body>
+    <h1>Locations</h1>
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Dimension</th>
+      </tr>
+      {% for location in locations %}
+      <tr>
+        <td>
+          <a
+            href="{{ url_for('location_profile', location_id=location['id']) }}"
+            >{{ location['name'] }}</a
+          >
+        </td>
+        <td>{{ location['type'] }}</td>
+        <td>{{ location['dimension'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

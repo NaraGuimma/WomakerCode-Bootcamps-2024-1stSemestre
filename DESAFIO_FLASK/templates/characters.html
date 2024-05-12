@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Characters</title>
+  </head>
+  <body>
+    <h1>Characters</h1>
+    <ul>
+      {% for character in characters %}
+      <li>
+        <h2>{{ character['name'] }}</h2>
+        <img src="{{ character['image'] }}" alt="{{ character['name'] }}" />
+        <p>Status: {{ character['status'] }}</p>
+        <p>Species: {{ character['species'] }}</p>
+        <p>Type: {{ character['type'] }}</p>
+        <p>Gender: {{ character['gender'] }}</p>
+        <p>
+          Origin:
+          <a href="{{ character['origin']['url'] }}"
+            >{{ character['origin']['name'] }}</a
+          >
+        </p>
+        <p>
+          Location:
+          <a href="{{ character['location']['url'] }}"
+            >{{ character['location']['name'] }}</a
+          >
+        </p>
+        <h3>Episodes</h3>
+        <ul>
+          {% for episode in character['episode'] %}
+          <li><a href="{{ episode }}">{{ episode }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Validacao CAPTCHA</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      function showPopup(message, className) {
+        console.log("Popup function");
+        console.log(message);
+        var popup = document.createElement("div");
+        popup.className = "popup " + className;
+        popup.textContent = message;
+        document.body.appendChild(popup);
+        setTimeout(function () {
+          popup.remove();
+        }, 3000);
+      }
+
+      window.onload = function () {
+        var success_message = "{{ success_message }}";
+        var error_message = "{{ error_message }}";
+
+        if (success_message.length > 10) {
+          showPopup(success_message, "success");
+        }
+
+        if (error_message.length > 10) {
+          showPopup(error_message, "error");
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <h1>Digite os números e letras da imagem abaixo:</h1>
+      <img src="{{ captcha_image_url }}" alt="CAPTCHA Image" />
+      <form action="/validate" method="post">
+        <input type="text" name="captcha_input" placeholder="Enter CAPTCHA" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
